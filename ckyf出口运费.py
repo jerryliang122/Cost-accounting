@@ -2,7 +2,7 @@
 import os
 import math
 
-Transportation = raw_input('使用的交通工具[K空运/H海运]:')
+Transportation = raw_input('使用的交通工具[1空运/2海运]:')
 print('在使用浮点计算中计算机因进制转换导致出现误差')
 danweitiji =input('单间体积:')
 danjianzhongliang = input('单件重量:')
@@ -15,9 +15,9 @@ print('公吨' + gd1 )
 tj1 = str(tiji)
 print('体积' + tj1 )
 
-if Transportation == 'k':
+if Transportation == '1':
     print('暂不支持')
-elif Transportation == 'h':
+elif Transportation == '2':
     jzx1 = input('20集装箱单价：')
     jzx2 = input('40集装箱单价：')
     jzx3 = input('40h集装箱单价：')
@@ -43,16 +43,16 @@ elif Transportation == 'h':
     #20集装箱输出价格
     jzx20 = (max(m20,c20))
     jzx20a = jzx20 * jzx1
-    print('20集装箱价格'+str(jzx20a))
+    print('\n20集装箱价格'+str(jzx20a))
     #40集装箱输出价格
     jzx40 = (max(m40,c40))
     jzx40a = jzx40 * jzx2
-    print('40集装箱价格'+str(jzx40a))
+    print('\n40集装箱价格'+str(jzx40a))
     #40H集装箱输出价格
     jzx40h = (max(m40h,c40h))
     jzx40ha = jzx40h * jzx3
-    print('40h集装箱价格'+str(jzx40ha))
-    print('下面散装价格')
+    print('\n40h集装箱价格'+str(jzx40ha))
+    print('下面散装价格\n')
     #LCLM 公吨输出价格
     lclhm = input('LCL重量单价：')
     lclhm1 = lclhm * gongdun
@@ -60,8 +60,18 @@ elif Transportation == 'h':
     lclhc1 = lclhm * tiji
     print(str(lclhc1)+ ' 体积价格')
     print(str(lclhm1)+ '重量价格')
-    print(str(max(lclhc1,lclhm1)) + '散件价格' )
+    lcl = max(lclhc1,lclhm1)
+    print(str(lcl) + '散件价格' )
     #
-    print(str(min(jzx40ha,jzx20a,jzx40a)) + '集装箱价格' )    
+    jzx = min(jzx40ha,jzx20a,jzx40a)
+    print(str(jzx) + '集装箱价格' )    
 else:
     print('输入错误。')
+
+os.system('rm -r ./cache/yunfei.txt')
+file = open('./cache/yunfei.txt','a')
+choose = raw_input('1散装/2集装箱：')
+if choose == '1':
+    print>>file,lcl
+elif choose == '2':
+    print>>file,jzx

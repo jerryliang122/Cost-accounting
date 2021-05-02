@@ -4,6 +4,7 @@ import os
 import math
 import time
 
+print('FOB=1 CFR=2 CIF =3 以此类推')
 maoyishuyu = raw_input("使用的是什么贸易术语[FOB/CFR/CIF]:")
 shijicaigouchengben = input('实际采购成本:')
 baoguanfei = input('报关费：')
@@ -14,7 +15,7 @@ yinhangfeilv = input('银行手续费率：') / 100
 #汇率定义
 huilv = 1.14
 
-if maoyishuyu == "fob":
+if maoyishuyu == "1":
     fob1 = shijicaigouchengben + baoguanfei + qita
     fob2 = 1 + yuqiyingkuilv
     fob3 = fob1 * fob2
@@ -23,11 +24,13 @@ if maoyishuyu == "fob":
     fob6 = 1 - fob5
     fob7 = fob3 / fob6
     print(str(fob7*huilv)+ 'FOB对外报价')
-elif maoyishuyu == "cfr":
+elif maoyishuyu == "2":
     print('将在3秒后跳转到出口运费计算')
     time.sleep(3)
     os.system('python ckyf出口运费.py')
-    chukouyunfei = input('出口运费（美元）:') / huilv
+    #读取运费脚本的运费
+    file = open('./cache/yunfei.txt')  
+    chukouyunfei = float(file.read()) / huilv
     
     cfr1 = shijicaigouchengben + baoguanfei + qita + chukouyunfei
     cfr2 = 1 + yuqiyingkuilv
@@ -37,12 +40,14 @@ elif maoyishuyu == "cfr":
     cfr6 = 1 - cfr5
     cfr7 = cfr3 / cfr6
     print(str(cfr7*huilv)+ 'CFR对外报价')
-elif maoyishuyu == 'cif':
+elif maoyishuyu == '3':
     #出口运费计算
     print('将在3秒后跳转到出口运费计算')
     time.sleep(3)
     os.system('python ckyf出口运费.py')
-    chukouyunfei = input('出口运费（美元）:') / huilv
+    #读取运费脚本的运费
+    file = open('./cache/yunfei.txt')  
+    chukouyunfei = float(file.read()) / huilv
     #cfr8是保险费率投保加成固定110%
     baoxianfeilv = input('保险费率：')
     cif8 = baoxianfeilv * 1.1
