@@ -15,6 +15,7 @@ yinhangfeilv = input('银行手续费率：') / 100
 #汇率定义
 huilv = 1.14
 
+
 if maoyishuyu == "1":
     fob1 = shijicaigouchengben + baoguanfei + qita
     fob2 = 1 + yuqiyingkuilv
@@ -25,7 +26,6 @@ if maoyishuyu == "1":
     fob7 = fob3 / fob6
     fob = str(fob7*huilv)
     print(fob + 'FOB对外报价')
-    os.system('rm -r ./cache/duiwaibaojia.txt')
     file = open('./cache/duiwaibaojia.txt','a')
     print>>file,fob
 elif maoyishuyu == "2":
@@ -45,7 +45,6 @@ elif maoyishuyu == "2":
     cfr7 = cfr3 / cfr6
     cfr = str(cfr7*huilv)
     print(cfr + 'CFR对外报价')
-    os.system('rm -r ./cache/duiwaibaojia.txt')
     file = open('./cache/duiwaibaojia.txt','a')
     print>>file,cfr
 elif maoyishuyu == '3':
@@ -68,7 +67,6 @@ elif maoyishuyu == '3':
     cif7 = cif3 / cif6
     cif = str(cif7*huilv)
     print(cif + 'CIF对外报价')
-    os.system('rm -r ./cache/duiwaibaojia.txt')
     file = open('./cache/duiwaibaojia.txt','a')
     print>>file,cif
 else:

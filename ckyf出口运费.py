@@ -68,7 +68,6 @@ elif Transportation == '2':
 else:
     print('输入错误。')
 
-os.system('rm -r ./cache/yunfei.txt')
 file = open('./cache/yunfei.txt','a')
 choose = raw_input('1散装/2集装箱：')
 if choose == '1':
