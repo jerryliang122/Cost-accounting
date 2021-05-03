@@ -10,5 +10,5 @@ if a == "1":
 elif a == '2':
     toubaojine = 1.1 
     #读取对外报价文件
-    file = open('cache/duiwaibaojia.txt') 
+    file = open('./cache/duiwaibaojia.txt') 
     float(file.read())
