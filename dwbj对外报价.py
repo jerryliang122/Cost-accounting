@@ -15,6 +15,18 @@ yinhangfeilv = input('银行手续费率：') / 100
 #汇率定义
 huilv = 1.14
 
+file1 = open('./cache/yinhangfeilv.txt','a')
+print>>file1,yinhangfeilv
+file2 = open('./cache/baojianshouxufei.txt','a')
+print>>file2,baojianshouxufei
+file3 = open('./cache/yuqiyingkuilv.txt','a')
+print>>file3,yuqiyingkuilv
+file4 = open('./cache/qita.txt','a')
+print>>file4,qita
+file5 = open('./cache/baoguanfei.txt','a')
+print>>file5,baoguanfei
+file6 = open('./cache/shijicaigouchengben.txt','a')
+print>>file6,shijicaigouchengben
 
 if maoyishuyu == "1":
     fob1 = shijicaigouchengben + baoguanfei + qita
