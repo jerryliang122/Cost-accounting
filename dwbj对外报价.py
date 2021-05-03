@@ -23,7 +23,11 @@ if maoyishuyu == "1":
     fob5 = fob2 * fob4
     fob6 = 1 - fob5
     fob7 = fob3 / fob6
-    print(str(fob7*huilv)+ 'FOB对外报价')
+    fob = str(fob7*huilv)
+    print(fob + 'FOB对外报价')
+    os.system('rm -r ./cache/duiwaibaojia.txt')
+    file = open('./cache/duiwaibaojia.txt','a')
+    print>>file,fob
 elif maoyishuyu == "2":
     print('将在3秒后跳转到出口运费计算')
     time.sleep(3)
@@ -39,7 +43,11 @@ elif maoyishuyu == "2":
     cfr5 = cfr2 * cfr4
     cfr6 = 1 - cfr5
     cfr7 = cfr3 / cfr6
-    print(str(cfr7*huilv)+ 'CFR对外报价')
+    cfr = str(cfr7*huilv)
+    print(cfr + 'CFR对外报价')
+    os.system('rm -r ./cache/duiwaibaojia.txt')
+    file = open('./cache/duiwaibaojia.txt','a')
+    print>>file,cfr
 elif maoyishuyu == '3':
     #出口运费计算
     print('将在3秒后跳转到出口运费计算')
@@ -58,6 +66,10 @@ elif maoyishuyu == '3':
     cif5 = cif2 * cif4
     cif6 = 1 - cif5
     cif7 = cif3 / cif6
-    print(str(cif7*huilv)+ 'CIF对外报价')
+    cif = str(cif7*huilv)
+    print(cif + 'CIF对外报价')
+    os.system('rm -r ./cache/duiwaibaojia.txt')
+    file = open('./cache/duiwaibaojia.txt','a')
+    print>>file,cif
 else:
     print('输入错误请重新输入。')
