@@ -12,6 +12,7 @@ qita = input('其他:')
 yuqiyingkuilv = input('预期盈亏率:') / 100
 baojianshouxufei = input('报检手续费:') / 100
 yinhangfeilv = input('银行手续费率：') / 100
+baoxianfeilv = input('保险费率：')
 #汇率定义
 huilv = 1.14
 
@@ -27,7 +28,8 @@ file5 = open('./cache/baoguanfei.txt','a')
 print>>file5,baoguanfei
 file6 = open('./cache/shijicaigouchengben.txt','a')
 print>>file6,shijicaigouchengben
-
+file7 = open("./cache/baoxianfeilv.txt",'a')
+print>>file7,baoxianfeilv
 if maoyishuyu == "1":
     fob1 = shijicaigouchengben + baoguanfei + qita
     fob2 = 1 + yuqiyingkuilv
@@ -68,7 +70,6 @@ elif maoyishuyu == '3':
     file = open('./cache/yunfei.txt')  
     chukouyunfei = float(file.read()) / huilv
     #cfr8是保险费率投保加成固定110%
-    baoxianfeilv = input('保险费率：')
     cif8 = baoxianfeilv * 1.1
     cif1 = shijicaigouchengben + baoguanfei + qita + chukouyunfei
     cif2 = 1 + yuqiyingkuilv

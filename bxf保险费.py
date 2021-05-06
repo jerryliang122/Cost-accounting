@@ -7,8 +7,11 @@ import time
 if a == "1":
     print('尚未支持')
 elif a == '2':
-    toubaojine = 1.1 
+    toubaojinefl = 1.1
     #读取对外报价文件
     file = open('./cache/duiwaibaojia.txt') 
-    float(file.read())
-    baoxianfeilv 
+    toubaojine = float(file.read()) /toubaojinefl
+    file1 = open('./cache/baoxianfeilv.txt')
+    baoxianfei = float(file1.read()) * toubaojine
+    print(baoxianfei)
+    print>>open("./cache/baoxianfei.txt",'a'),baoxianfei
