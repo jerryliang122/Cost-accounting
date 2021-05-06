@@ -17,6 +17,10 @@ if a =="2":
     print('对外报价计算，正在跳转至相关模块')
     time.sleep(1)
     os.system('python dwbj对外报价.py')
+    print('保险费计算')
+    time.sleep(1)
+    os.system('python bxf保险费.py ')
+    
 if a =='1':
     print('进口报价计算，正在跳转至相关模块')
     time.sleep(1)
