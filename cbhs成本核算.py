@@ -9,6 +9,7 @@ print('版本0.1alpha----注意请使用小写英文--费率是写入%')
 time.sleep(2)
 print('正在初始化cache文件夹中')
 os.system('rm -rf ./cache/')
+os.system('mkdir ./cache')
 time.sleep(2)
 #对外报价
 a = raw_input('1进口商/2出口商:')
