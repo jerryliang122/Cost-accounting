@@ -12,7 +12,7 @@ qita = input('其他:')
 yuqiyingkuilv = input('预期盈亏率:') / 100
 baojianshouxufei = input('报检手续费:') / 100
 yinhangfeilv = input('银行手续费率：') / 100
-baoxianfeilv = input('保险费率：')
+baoxianfeilv = input('保险费率，千分率：')/1000
 #汇率定义
 huilv = 1.14
 

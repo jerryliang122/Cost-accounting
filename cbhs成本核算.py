@@ -13,6 +13,7 @@ os.system('mkdir ./cache')
 time.sleep(2)
 #对外报价
 a = raw_input('1进口商/2出口商:')
+print>>open('./cache/a.txt','a'),a
 if a =="2":
     print('对外报价计算，正在跳转至相关模块')
     time.sleep(1)
@@ -20,7 +21,12 @@ if a =="2":
     print('保险费计算')
     time.sleep(1)
     os.system('python bxf保险费.py ')
-    
+    print('出口退税计算')
+    time.sleep(1)
+    os.system('python tuisui出口退税.py')
+    print('出口检验检疫费用')
+    time.sleep(1)
+    os.system('python jianyi检疫费用.py')
 if a =='1':
     print('进口报价计算，正在跳转至相关模块')
     time.sleep(1)
