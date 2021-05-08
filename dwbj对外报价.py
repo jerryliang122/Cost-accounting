@@ -14,7 +14,7 @@ baojianshouxufei = input('报检手续费:') / 100
 yinhangfeilv = input('银行手续费率：') / 100
 baoxianfeilv = input('保险费率，千分率：')/1000
 #汇率定义
-huilv = 1.14
+huilv = input('汇率:')
 
 file1 = open('./cache/yinhangfeilv.txt','a+')
 print>>file1,yinhangfeilv
@@ -30,6 +30,8 @@ file6 = open('./cache/shijicaigouchengben.txt','a+')
 print>>file6,shijicaigouchengben
 file7 = open("./cache/baoxianfeilv.txt",'a+')
 print>>file7,baoxianfeilv
+file8 = open('./cache/huilv.txt','a')
+print>>file8,huilv
 if maoyishuyu == "1":
     fob1 = shijicaigouchengben + baoguanfei + qita
     fob2 = 1 + yuqiyingkuilv
