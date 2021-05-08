@@ -12,7 +12,7 @@ os.system('rm -rf ./cache/')
 os.system('mkdir ./cache')
 time.sleep(2)
 #对外报价
-a = raw_input('1进口商/2出口商:')
+a = input('1进口商/2出口商:')
 print>>open('./cache/a.txt','a'),a
 if a =="2":
     print('对外报价计算，正在跳转至相关模块')
