@@ -11,6 +11,6 @@ if a == '1':
 #出口商
 elif a == "2":
     jianyifelv = float(open('./cache/baojianshouxufei.txt').read)
-    hetongjinge = float(open('/cache/duiwaibaojia.txt').read)
+    hetongjinge = float(open('./cache/duiwaibaojia.txt').read)
     jianyifeiyong = hetongjinge * jianyifelv
     print>>open('./cache/jianyifeiyong.txt','a'),jianyifeiyong

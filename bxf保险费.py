@@ -3,7 +3,7 @@ import os
 import math
 import time
 
-
+a = float(open('./cache/a.txt').read)
 if a == "1":
     print('尚未支持')
 elif a == '2':
