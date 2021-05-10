@@ -14,11 +14,11 @@ if mysy == '1':
     zl = float(djbaozhuangzl)/float(baozhuangsl)
     tj = float(djbaozhuangtj)/float(baozhuangsl)
     file1 = open('./cache/jk/baozhuangsl.txt','a')
-    print>>file1,baozhuangsl
+    file1.write(baozhuangsl)
     file2 =open('./cache/jk/djbaozhuangzl.txt','a')
-    print>>file2,baozhuangzl
+    file2.write(djbaozhuangzl)
     file3 =open('./cache/jk/djbaozhuangtj.txt','a')
-    print>>file3,djbaozhuangtj
+    file3.write(djbaozhuangtj)
     print('计算运费')
     time.sleep(2)
     os.system('python3 ./1进口商/运费.py')
