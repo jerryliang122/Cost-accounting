@@ -34,7 +34,7 @@ if mysy == '1':
     os.system('./1进口商/销货收入.py')
     print('计算预期盈亏率')
     os.system('./1进口商/预期盈亏额.py')
-if mysy == "2":
+elif mysy == "2":
     print('计算保险费')
     os.system('./1进口商/保险费.py')
     print('计算进口税费')
@@ -47,7 +47,7 @@ if mysy == "2":
     os.system('./1进口商/销货收入.py')
     print('计算预期盈亏率')
     os.system('./1进口商/预期盈亏额.py')
-if mysy == '3':
+elif mysy == '3':
     print('计算进口税费')
     os.system('./1进口商/进口税费.py')
     print('计算银行费用')
