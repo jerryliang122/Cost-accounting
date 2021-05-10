@@ -5,6 +5,13 @@ import time
 
 mysy = input('贸易术语1FOB/2CRF/3CIF:')
 cjj =input('成交价:')
+cjsl = input('成交数量:')
+baozhuang = input('包装数量:')
+baozhuangzl=input('包装单件重量:')
+baozhuangtj=input('包装单件体积：')
+zl = float(baozhuangzl)/float(baozhuang)
+tj = float(baozhuangtj)/float(baozhuang)
+
 if mysy == '1':
     print('计算运费')
     time.sleep(2)
