@@ -5,6 +5,9 @@ import time
 
 mysy = input('贸易术语1FOB/2CRF/3CIF:')
 cjj =input('成交价:')
+file7 = open('./cache/jk/cjj.txt','a')
+file7.write(cjj)
+file7.close()
 
 if mysy == '1':
     cjsl = input('成交数量:')
@@ -32,6 +35,9 @@ if mysy == '1':
     time.sleep(2)
     os.system('python3 ./1进口商/运费.py')
     print('计算保险费')
+    file6 = open('./cache/jk/mysy.txt','a')
+    file6.write(mysy)
+    file6.close()
     os.system('python3 ./1进口商/保险费.py')
     print('计算进口税费')
     os.system('python3 ./1进口商/进口税费.py')
@@ -45,6 +51,9 @@ if mysy == '1':
     os.system('python3 ./1进口商/预期盈亏额.py')
 elif mysy == "2":
     print('计算保险费')
+    file6 = open('./cache/jk/mysy.txt','a')
+    file6.write(mysy)
+    file6.close()
     os.system('python3 ./1进口商/保险费.py')
     print('计算进口税费')
     os.system('python3 ./1进口商/进口税费.py')
