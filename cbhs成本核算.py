@@ -17,3 +17,4 @@ elif choose == "2":
     os.system('python3 ./2出口商/出口商计算.py')
 else:
     print('输入错误')
+    os.system('python3 cbhs成本核算.py')
