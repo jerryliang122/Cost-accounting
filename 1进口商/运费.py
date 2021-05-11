@@ -78,7 +78,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt'.'a')
+        file3 = open('./cache/jk/hkyf.txt','a')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('45') and hkzl < float('100'):
@@ -87,7 +87,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt'.'a')
+        file3 = open('./cache/jk/hkyf.txt','a')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('100') and hkzl < float('300'):
@@ -96,7 +96,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt'.'a')
+        file3 = open('./cache/jk/hkyf.txt','a')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('300') and hkzl < float('500'):
@@ -105,7 +105,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt'.'a')
+        file3 = open('./cache/jk/hkyf.txt','a')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('500') and hkzl < float('1000'):
@@ -114,7 +114,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt'.'a')
+        file3 = open('./cache/jk/hkyf.txt','a')
         file3.write(str(hkyf))
         file3.close()
     else:
@@ -123,7 +123,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt'.'a')
+        file3 = open('./cache/jk/hkyf.txt','a')
         file3.write(str(hkyf))
         file3.close()
 else:
