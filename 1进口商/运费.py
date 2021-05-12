@@ -50,7 +50,7 @@ if yf == "1":
     lclhm =  float(input('LCL重量单价：'))
     lclhm1 = lclhm * zl
     lclhc = float(input('LCL体积单价:'))
-    lclhc1 = lclhm * tj
+    lclhc1 = lclhc * tj
     print(str(lclhc1)+ ' 体积价格')
     print(str(lclhm1)+ '重量价格')
     lcl = max(lclhc1,lclhm1)
@@ -59,12 +59,12 @@ if yf == "1":
     print(str(jzx) + '集装箱价格' )    
     if lcl > jzx :
         print(str(jzx) + '集装箱价格' )
-        file1 = open('./cache/jk/yf.txt')
-        file1.write(str(jzx)
+        file1 = open('./cache/jk/yf.txt','a+fc-')
+        file1.write(str(jzx))
     else:
         print(str(lcl) + '散件价格')     
-        file1 = open('./cache/jk/yf.txt')
-        file1.write(str(lcl)
+        file1 = open('./cache/jk/yf.txt','a+')
+        file1.write(str(lcl))
 #航空计费
 elif yf == '2':
     zl = float(open('./cache/jk/zl.txt','r+').read()) 
@@ -80,7 +80,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('45') and hkzl < float('100'):
@@ -89,7 +89,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('100') and hkzl < float('300'):
@@ -98,7 +98,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('300') and hkzl < float('500'):
@@ -107,7 +107,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('500') and hkzl < float('1000'):
@@ -116,7 +116,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     else:
@@ -125,7 +125,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/jk/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
 else:
