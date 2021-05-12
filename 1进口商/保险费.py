@@ -8,7 +8,8 @@ htje = open('./cache/jk/cjj.txt','a+').read()
 
 def haiyun():
     if mysy == '1':
-        yf = open('./cache/jk/yf.txt','a+')
+        yf = open('./cache/jk/yf.txt','a+').read()
+        
         pass
     elif mysy =="2":
         bxf = float(htje) * 1.1 / 0.99032
