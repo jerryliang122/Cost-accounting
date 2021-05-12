@@ -16,8 +16,6 @@ if mysy == '1':
     djbaozhuangtj=input('包装单件体积：')
     zl = float(djbaozhuangzl)/float(baozhuangsldj) * float(cjsl)
     tj = float(djbaozhuangtj)/float(baozhuangsldj) * float(cjsl)
-    file1 = open('./cache/jk/baozhuangsl.txt','a+')
-    file1.write(baozhuangsl)
     file2 =open('./cache/jk/djbaozhuangzl.txt','a+')
     file2.write(djbaozhuangzl)
     file3 =open('./cache/jk/djbaozhuangtj.txt','a+')

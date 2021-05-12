@@ -6,10 +6,10 @@ import time
 yf =input('1海运/2空运:')
 #打开存储文件
  
-
+#海运计费
 if yf == "1":
-    zl = float(open('./cache/ck/zl.txt','r+').read()) / 1000
-    tj = float(open('./cache/ck/tj.txt','r+').read())
+    zl = float(open('./cache/jk/zl.txt','r+').read()) / 1000
+    tj = float(open('./cache/jk/tj.txt','r+').read())
     jzx1 = float(input('20集装箱单价：'))
     jzx2 = float(input('40集装箱单价：'))
     jzx3 = float(input('40h集装箱单价：'))
@@ -50,23 +50,25 @@ if yf == "1":
     lclhm =  float(input('LCL重量单价：'))
     lclhm1 = lclhm * zl
     lclhc = float(input('LCL体积单价:'))
-    lclhc1 = lclhm * tj
+    lclhc1 = lclhc * tj
     print(str(lclhc1)+ ' 体积价格')
     print(str(lclhm1)+ '重量价格')
     lcl = max(lclhc1,lclhm1)
     print(str(lcl) + '散件价格' )
-    #
     jzx = min(jzx40ha,jzx20a,jzx40a)
     print(str(jzx) + '集装箱价格' )    
-    file1 = open('./cache/ck/lcl.txt','a')
-    file1.write(str(lcl))
-    file1.close()
-    file2 = open('./cache/ck/jzx.txt','a')
-    file2.write(str(jzx))
-    file2.close()
+    if lcl > jzx :
+        print(str(jzx) + '集装箱价格' )
+        file1 = open('./cache/jk/yf.txt','a+fc-')
+        file1.write(str(jzx))
+    else:
+        print(str(lcl) + '散件价格')     
+        file1 = open('./cache/jk/yf.txt','a+')
+        file1.write(str(lcl))
+#航空计费
 elif yf == '2':
-    zl = float(open('./cache/ck/zl.txt','r+').read()) 
-    tj = float(open('./cache/ck/tj.txt','r+').read())
+    zl = float(open('./cache/jk/zl.txt','r+').read()) 
+    tj = float(open('./cache/jk/tj.txt','r+').read())
     cbm = tj * float('167')
     hkzl = max(zl,cbm)
     msc = float(input('最低运费msc:'))/float('100')
@@ -78,7 +80,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/ck/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('45') and hkzl < float('100'):
@@ -87,7 +89,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/ck/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('100') and hkzl < float('300'):
@@ -96,7 +98,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/ck/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('300') and hkzl < float('500'):
@@ -105,7 +107,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/ck/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     elif hkzl >= float('500') and hkzl < float('1000'):
@@ -114,7 +116,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/ck/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
     else:
@@ -123,7 +125,7 @@ elif yf == '2':
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
         hkyf = round(end + fjf,2)
-        file3 = open('./cache/ck/hkyf.txt','a')
+        file3 = open('./cache/jk/hkyf.txt','a+')
         file3.write(str(hkyf))
         file3.close()
 else:
