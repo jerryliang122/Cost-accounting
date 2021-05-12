@@ -5,7 +5,9 @@ import time
 
 yf =input('1海运/2空运:')
 #打开存储文件
- 
+ysfs = open('./cache/jk/ysfs.txt',"a+")
+ysfs.write(yf)
+ysfs.close()
 #海运计费
 if yf == "1":
     zl = float(open('./cache/jk/zl.txt','r+').read()) / 1000
@@ -59,7 +61,7 @@ if yf == "1":
     print(str(jzx) + '集装箱价格' )    
     if lcl > jzx :
         print(str(jzx) + '集装箱价格' )
-        file1 = open('./cache/jk/yf.txt','a+fc-')
+        file1 = open('./cache/jk/yf.txt','a+')
         file1.write(str(jzx))
     else:
         print(str(lcl) + '散件价格')     
@@ -67,8 +69,8 @@ if yf == "1":
         file1.write(str(lcl))
 #航空计费
 elif yf == '2':
-    zl = float(open('./cache/jk/zl.txt','r+').read()) 
-    tj = float(open('./cache/jk/tj.txt','r+').read())
+    zl = float(open('./cache/jk/zl.txt','a+').read()) 
+    tj = float(open('./cache/jk/tj.txt','a+').read())
     cbm = tj * float('167')
     hkzl = max(zl,cbm)
     msc = float(input('最低运费msc:'))/float('100')
