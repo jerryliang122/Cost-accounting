@@ -24,7 +24,6 @@ if mysy == '1':
     file4.write(str(zl))
     file5 = open('./cache/jk/tj.txt','a+')
     file5.write(str(tj))
-    file1.close()
     file2.close()
     file3.close()
     file4.close()
