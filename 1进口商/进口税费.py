@@ -27,3 +27,23 @@ def cif():
     else:
         pass
     return end
+jkgs = cif() * gsl
+wscb = cif() + jkgs
+jkxfs = wscb * xfs / (1-xfs)
+jkzzs = (wscb+jkxfs) * xfs
+jksfhj = jkgs + jkxfs + jkzzs
+file1 = open('./cache/jk/jkgs.txt',"a+")
+file2 = open('./cache/jk/wscb.txt','a+')
+file3 = open('./cache/jk/jkxfs.txt','a+')
+file4 = open('./cache/jk/jkzzs.txt','a+')
+file5 = open('./cache/jk/jksfhj.txt','a+')
+file1.write(str(jkgs))
+file2.write(str(wscb))
+file3.write(str(jkxfs))
+file4.write(str(jkzzs))
+file5.write(str(jksfhj))
+file1.close()
+file2.close()
+file3.close()
+file4.close()
+file5.close()
