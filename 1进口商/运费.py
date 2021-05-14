@@ -10,8 +10,8 @@ ysfs.write(yf)
 ysfs.close()
 #海运计费
 if yf == "1":
-    zl = float(open('./cache/jk/zl.txt','r+').read()) / 1000
-    tj = float(open('./cache/jk/tj.txt','r+').read())
+    zl = float(open('./cache/jk/zl.txt').read()) / 1000
+    tj = float(open('./cache/jk/tj.txt').read())
     jzx1 = float(input('20集装箱单价：'))
     jzx2 = float(input('40集装箱单价：'))
     jzx3 = float(input('40h集装箱单价：'))
@@ -69,8 +69,8 @@ if yf == "1":
         file1.write(str(lcl))
 #航空计费
 elif yf == '2':
-    zl = float(open('./cache/jk/zl.txt','a+').read()) 
-    tj = float(open('./cache/jk/tj.txt','a+').read())
+    zl = float(open('./cache/jk/zl.txt').read()) 
+    tj = float(open('./cache/jk/tj.txt').read())
     cbm = tj * float('167')
     hkzl = max(zl,cbm)
     msc = float(input('最低运费msc:'))/float('100')
