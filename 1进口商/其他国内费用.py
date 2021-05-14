@@ -14,8 +14,19 @@ def jy():
     file = open('./cache/jk/jyfy.txt',"a+")
     file.write(str(jy))
     file.close()
-    pass
+    return jy
 def bgf():
-    pass
+    bgf = float(input('报关费：'))
+    file = open('./cache/jk/bgf.txt','a+')
+    file.write(str(bgf))
+    file.close()
+    return bgf
 def hdzf():
-    pass
+    zfl = float(input('杂费率:')) / 100
+    zfzd = float(input('最低杂费:'))
+    zf = max(zfl,zfzd) 
+    print(str(zf))
+    file = open('./cache/jk/hdzf.txt','a+')
+    file.write(str(zf))
+    file.close()
+    return zf
