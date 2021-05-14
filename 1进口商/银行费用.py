@@ -3,7 +3,7 @@ import os
 import time
 import math
 
-yhxz = input('1汇款/2托收/3信用证/4其他：')
+yhxz = input('1汇款/2托收/3信用证：')
 
 def hk():
     ff = input('1电汇/2票汇:')
@@ -24,7 +24,28 @@ def hk():
         file.write(str(dh))
         file.close()
     return dh
+
 def ts():
-    file = open('./cache/jk/cjj.txt','a+')
+    file = open('./cache/jk/cjj.txt')
     #托收费用不一定固定目前按固定算
     ts = float(file) * 0.1 / 100
+    file = open('./cache/jk/yhfy.txt','a+')
+    file.write(str(ts))
+    file.close()
+    return ts
+
+def xyz():
+    file = open('./cache/jk/cjj.txt')
+    xyzfl = float(file) * 0.15 / 100 
+    xyzzg = float(input('信用证最高手续费：'))
+    xyz = min(xyzfl,xyzzg)
+    file = open('./cache/jk/yhfy.txt','a+')
+    file.write(str(xyz))
+    file.close()
+
+if yhxz == '1':
+    hk()
+elif yhxz == '2':
+    ts()
+else:
+    xyz()
