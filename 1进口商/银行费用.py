@@ -42,10 +42,25 @@ def xyz():
     file = open('./cache/jk/yhfy.txt','a+')
     file.write(str(xyz))
     file.close()
+    return xyz
+
+qt = float(input('其他费用：'))
 
 if yhxz == '1':
-    hk()
+    hj = hk() + qt
+    print(str(hj))
+    file = open('./cache/jk/yhfyhj.txt','a+')
+    file.write(hj)
+    file.close()
 elif yhxz == '2':
-    ts()
+    hj = ts() + qt
+    print(str(hj))
+    file = open('./cache/jk/yhfyhj.txt','a+')
+    file.write(hj)
+    file.close()
 else:
-    xyz()
+    hj = xyz() + qt
+    print(str(hj))
+    file = open('./cache/jk/yhfyhj.txt','a+')
+    file.write(hj)
+    file.close()

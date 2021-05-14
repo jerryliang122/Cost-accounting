@@ -30,3 +30,12 @@ def hdzf():
     file.write(str(zf))
     file.close()
     return zf
+
+jy()
+bgf()
+hdzf()
+hj = jy() + bgf() + hdzf()
+print(str(hj))
+file = open('./cache/jk/gnfyhy.txt',"a+")
+file.write(hj)
+file.close()
