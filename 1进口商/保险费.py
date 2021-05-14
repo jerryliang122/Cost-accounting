@@ -3,12 +3,12 @@ import os
 import math
 import time
 
-mysy = open('./cache/jk/mysy.txt','a+').read()
-htje = open('./cache/jk/cjj.txt','a+').read()
-ysfs = open('./cache/jk/ysfs.txt','a+').read()
+mysy = open('./cache/jk/mysy.txt').read()
+htje = open('./cache/jk/cjj.txt').read()
+ysfs = open('./cache/jk/ysfs.txt').read()
 def haiyun():
     if mysy == '1':
-        yf = open('./cache/jk/yf.txt','a+').read()
+        yf = open('./cache/jk/yf.txt').read()
         htjg = float(htje)+float(yf)
         bxf = float(htje) * 1.1 / 0.99032
         print(str(bxf))
@@ -33,7 +33,7 @@ def haiyun():
 
 def kongyun():
     if mysy == '1':
-        yf = open('./cache/jk/yf.txt','a+').read()
+        yf = open('./cache/jk/yf.txt').read()
         htjg = float(htje)+float(yf)
         bxf = float(htje) * 1.1 / 1.09527
         print(str(bxf))
