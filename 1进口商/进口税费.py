@@ -7,8 +7,8 @@ xfs = float(input('输入消费税:')) / 100
 zzs = float(input('输入增值税:')) / 100
 #配置支持CIF
 def cif():
-    file1 = open('./cache/jk/mysy.txt')
-    if file1.read() == '1':
+    file1 = open('./cache/jk/mysy.txt').read()
+    if file1 == '1':
         file2 = open('./cache/jk/yf.txt')
         file3 = open('./cache/jk/cjj.txt')
         cfr = float(file2.read()) + float(file3.read())
@@ -25,10 +25,12 @@ def cif():
         file5.write(str(end))
         file5.close()
     else:
-        pass
+        file6 = open('./cache/jk/cjj.txt').read()
+        end = float(file6)
     return end
-jkgs = cif() * gsl
-wscb = cif() + jkgs
+ciff = cif()
+jkgs = ciff * gsl
+wscb = ciff + jkgs
 jkxfs = wscb * xfs / (1-xfs)
 jkzzs = (wscb+jkxfs) * xfs
 jksfhj = jkgs + jkxfs + jkzzs
