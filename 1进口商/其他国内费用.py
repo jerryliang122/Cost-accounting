@@ -3,12 +3,12 @@ import os
 import math
 import time 
 
-cjj = open('./cache/jk/cjj.txt').read
+cjj = open('./cache/jk/cjj.txt').read()
 
 def jy():
     jyzd = float(input('检疫最低手续费:'))
     jyfl = float(input('检疫费率:')) / 100
-    jyf = cjj * jyfl
+    jyf = float(cjj) * jyfl
     jy = max(jyf,jyfl)
     print(str(jy))
     file = open('./cache/jk/jyfy.txt',"a+")
@@ -31,11 +31,11 @@ def hdzf():
     file.close()
     return zf
 
-jy()
-bgf()
-hdzf()
-hj = jy() + bgf() + hdzf()
+jyy = jy()
+bgff = bgf()
+hdzff = hdzf()
+hj = jyy + bgff + hdzff
 print(str(hj))
 file = open('./cache/jk/gnfyhy.txt',"a+")
-file.write(hj)
+file.write(str(hj))
 file.close()

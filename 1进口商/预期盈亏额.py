@@ -11,8 +11,8 @@ xhsl = float(open('./cache/jk/xhsl.txt').read())
 yqyke = zcb - xhsl
 ykl = xhsl / zcb
 file = open('./cache/jk/yqyke.txt','a+')
-file.write(yqyke)
+file.write(str(yqyke))
 file.close()
 file1 = open('./cache/jk/ykl.txt',"a+")
-file1.write(ykl)
+file1.write(str(ykl))
 file1.close()
