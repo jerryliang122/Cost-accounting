@@ -8,16 +8,16 @@ yhxz = input('1汇款/2托收/3信用证：')
 def hk():
     ff = input('1电汇/2票汇:')
     if ff == '1':
-        dhfl = float(input('票汇手续费：')) / 100 * float(open('./cache/jk/cif.txt').read())
-        dfzg = float(input('票汇最高手续费:'))
+        dhfl = float(1) / 1000 * float(open('./cache/jk/cif.txt').read())
+        dfzg = 29.57
         dh = min(dhfl,dfzg)
         print(str(dh))
         file = open('./cache/jk/yhfy.txt','a+')
         file.write(str(dh))
         file.close()
     else:
-        dhfl = float(input('票汇手续费：')) / 100 * float(open('./cache/jk/cif.txt').read())
-        dfzg = float(input('票汇最高手续费:'))
+        dhfl = float(1) / 1000 * float(open('./cache/jk/cif.txt').read())
+        dfzg = 35.49
         dh = min(dhfl,dfzg)
         print(str(dh))
         file = open('./cache/jk/yhfy.txt','a+')

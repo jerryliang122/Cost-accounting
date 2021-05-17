@@ -67,6 +67,9 @@ elif mysy == "2":
     os.system('python3 ./1进口商/预期盈亏额.py')
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == '3':
+    file = open('./cache/jk/cif.txt','a+')
+    file.write(str(cjj))
+    file.close()
     print('计算进口税费')
     os.system('python3 ./1进口商/进口税费.py')
     print('计算银行费用')
