@@ -6,9 +6,11 @@ jksfhj = float(open('./cache/jk/jksfhj.txt').read())
 yhfyhj = float(open('./cache/jk/yhfyhj.txt').read())
 qtgnfyhj = float(open('./cache/jk/gnfyhy.txt').read())
 cif = float(open('./cache/jk/cif.txt').read())
-zcb = cif + qtgnfyhj + yhfyhj + jksfhj
+yfhj = float(open('./cache/jk/yf.txt').read())
+bxfhj = float(open('./cache/jk/bxf.txt').read())
+zcb = cif + qtgnfyhj + yhfyhj + jksfhj + yfhj + bxfhj
 xhsl = float(open('./cache/jk/xhsl.txt').read())
-yqyke = zcb - xhsl
+yqyke = xhsl - zcb
 ykl = yqyke / zcb * 100
 file = open('./cache/jk/yqyke.txt','a+')
 file.write(str(yqyke))

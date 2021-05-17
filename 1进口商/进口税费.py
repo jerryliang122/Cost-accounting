@@ -24,9 +24,17 @@ def cif():
         file5 = open('./cache/jk/cif.txt','a+')
         file5.write(str(end))
         file5.close()
+        yfhj = open('./cache/jk/yf.txt','w+')
+        yfhj.close()
     else:
         file6 = open('./cache/jk/cjj.txt').read()
         end = float(file6)
+        yfhj = open('./cache/jk/yf.txt','w+')
+        bxfhj = open('./cache/jk/bxf.txt','w+')
+        yfhj.write('0')
+        bxfhj.write('0')
+        yfhj.close()
+        bxfhj.close()
     return end
 ciff = cif()
 jkgs = ciff * gsl
