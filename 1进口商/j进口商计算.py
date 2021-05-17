@@ -4,7 +4,7 @@ import math
 import time
 
 mysy = input('贸易术语1FOB/2CRF/3CIF:')
-cjj =float(input('成交价:')) * 1.13
+cjj =float(input('成交价:')) / 0.879
 file7 = open('./cache/jk/cjj.txt','a+')
 file7.write(str(cjj))
 file7.close()
@@ -81,6 +81,7 @@ elif mysy == '3':
     print('计算预期盈亏率')
     os.system('python3 ./1进口商/预期盈亏额.py')
 
+print('成交价:'+ open('./cache/jk/cjj.txt').read())
 print('进口税费：')
 print('进口关税:'+ open('./cache/jk/jkgs.txt').read())
 print('进口增值税：'+ open('./cache/jk/jkzzs.txt').read())
