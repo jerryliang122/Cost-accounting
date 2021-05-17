@@ -9,7 +9,7 @@ cif = float(open('./cache/jk/cif.txt').read())
 zcb = cif + qtgnfyhj + yhfyhj + jksfhj
 xhsl = float(open('./cache/jk/xhsl.txt').read())
 yqyke = zcb - xhsl
-ykl = xhsl / zcb
+ykl = yqyke / zcb * 100
 file = open('./cache/jk/yqyke.txt','a+')
 file.write(str(yqyke))
 file.close()
