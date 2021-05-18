@@ -12,9 +12,9 @@ ysfs.close()
 if yf == "1":
     zl = float(open('./cache/jk/zl.txt').read()) / 1000
     tj = float(open('./cache/jk/tj.txt').read())
-    jzx1 = float(input('20集装箱单价：')) * 1.13
-    jzx2 = float(input('40集装箱单价：')) * 1.13
-    jzx3 = float(input('40h集装箱单价：')) * 1.13
+    jzx1 = float(input('20集装箱单价：')) / 0.875
+    jzx2 = float(input('40集装箱单价：')) / 0.875
+    jzx3 = float(input('40h集装箱单价：')) / 0.875
     print('正在计算中')
     #20集装箱的操作方案
     jzx20m = float(25)
@@ -49,9 +49,9 @@ if yf == "1":
     print('\n40h集装箱价格'+str(jzx40ha))
     print('下面散装价格\n')
     #LCLM 公吨输出价格
-    lclhm =  float(input('LCL重量单价：')) * 1.13
+    lclhm =  float(input('LCL重量单价：')) / 0.875
     lclhm1 = lclhm * zl
-    lclhc = float(input('LCL体积单价:')) * 1.13
+    lclhc = float(input('LCL体积单价:')) / 0.875
     lclhc1 = lclhc * tj
     print(str(lclhc1)+ ' 体积价格')
     print(str(lclhm1)+ '重量价格')
@@ -73,9 +73,9 @@ elif yf == '2':
     tj = float(open('./cache/jk/tj.txt').read())
     cbm = tj * float('167')
     hkzl = max(zl,cbm)
-    msc = float(input('最低运费msc:'))/float(100) * 1.13
+    msc = float(input('最低运费msc:'))/float(100) / 0.875
     awc = float(input('AWC操作费：'))
-    myc = float(input('MYC燃油费:')) /float(100) * 1.13
+    myc = float(input('MYC燃油费:')) /float(100) / 0.875
     if hkzl < float('45'):
         yunjia = input('小于45运价:')
         #计算运费

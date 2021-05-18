@@ -10,14 +10,14 @@ def haiyun():
     if mysy == '1':
         yf = open('./cache/jk/yf.txt').read()
         htjg = float(htje)+float(yf)
-        bxf = float(htje) * 1.1 / 0.99032
+        bxf = float(htjg) * 0.00977
         print(str(bxf))
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
         pass
     elif mysy =="2":
-        bxf = float(htje) * 1.1 / 0.99032
+        bxf = float(htje) * 0.00977
         print(str(bxf))
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
@@ -35,14 +35,14 @@ def kongyun():
     if mysy == '1':
         yf = open('./cache/jk/yf.txt').read()
         htjg = float(htje)+float(yf)
-        bxf = float(htje) * 1.1 / 1.09527
+        bxf = float(htjg) * 0.0047
         print(str(bxf))
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
         pass
     elif mysy =="2":
-        bxf = float(htje) * 1.1 / 1.09527
+        bxf = float(htje) * 0.0047
         print(str(bxf))
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
