@@ -9,7 +9,7 @@ def hk():
     ff = input('1电汇/2票汇:')
     if ff == '1':
         dhfl = float(1) / 1000 * float(open('./cache/jk/cif.txt').read())
-        dfzg = 29.57
+        dfzg = 29.57 #电汇最高金额
         dh = min(dhfl,dfzg)
         print(str(dh))
         file = open('./cache/jk/yhfy.txt','a+')
@@ -17,7 +17,7 @@ def hk():
         file.close()
     else:
         dhfl = float(1) / 1000 * float(open('./cache/jk/cif.txt').read())
-        dfzg = 35.49
+        dfzg = 35.49 #票汇最高金额
         dh = min(dhfl,dfzg)
         print(str(dh))
         file = open('./cache/jk/yhfy.txt','a+')
@@ -37,14 +37,14 @@ def ts():
 def xyz():
     file = open('./cache/jk/cjj.txt')
     xyzfl = float(file) * 0.15 / 100 
-    xyzzg = float(input('信用证最高手续费：'))
-    xyz = min(xyzfl,xyzzg)
+    xyzzg = float(23.66) #开证手续费
+    xyz = max(xyzfl,xyzzg)
     file = open('./cache/jk/yhfy.txt','a+')
     file.write(str(xyz))
     file.close()
     return xyz
 
-qt = float(input('其他费用：'))
+qt = float(0) #其他费用
 
 if yhxz == '1':
     hj = hk() + qt
