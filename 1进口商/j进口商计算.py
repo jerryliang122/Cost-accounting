@@ -4,7 +4,7 @@ import math
 import time
 
 mysy = input('贸易术语1FOB/2CRF/3CIF:')
-cjj =float(input('成交价:')) / 0.879
+cjj =float(input('成交价:')) * 0.879
 file7 = open('./cache/jk/cjj.txt','a+')
 file7.write(str(cjj))
 file7.close()
