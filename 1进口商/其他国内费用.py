@@ -4,6 +4,7 @@ import math
 import time 
 
 cjj = open('./cache/jk/cjj.txt').read()
+jyf = input('是否有检疫1有/2无:')
 
 def jy():
     jyzd = float(7.1)
@@ -30,8 +31,10 @@ def hdzf():
     file.write(str(zf))
     file.close()
     return zf
-
-jyy = jy()
+if jyf == '1':
+    jyy = jy()
+else:
+    jyy = float(0)
 bgff = bgf()
 hdzff = hdzf()
 hj = jyy + bgff + hdzff
