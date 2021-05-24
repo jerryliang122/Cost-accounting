@@ -47,7 +47,11 @@ if mysy == '1':
     os.system('python3 ./1进口商/预期盈亏额.py')
     print('计算完毕 ')
     time.sleep(1)
+    #包装数量
+    bzsl = float(baozhuangsldj) * float(cjsl)
+    print('包装数量'+ str(bzsl))
     print('运费:'+ open('./cache/jk/yf.txt').read())
+    print('保险金额:'+ open('./cache/jk/bxje.txt').read())
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == "2":
     print('计算保险费')
@@ -65,6 +69,7 @@ elif mysy == "2":
     os.system('python3 ./1进口商/销货收入.py')
     print('计算预期盈亏率')
     os.system('python3 ./1进口商/预期盈亏额.py')
+    print('保险金额:'+ open('./cache/jk/bxje.txt').read())
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == '3':
     file = open('./cache/jk/cif.txt','a+')
