@@ -1,33 +1,29 @@
 # -*- coding: utf-8 -*-
 import os
-import math
 import time
+import 出口商定值调用
 
-print('欢迎使用python版本的成本核算--作者jerryliang')
-time.sleep(3)
-print('版本0.1alpha----注意请使用小写英文--费率是写入%')
-time.sleep(2)
-print('正在初始化cache文件夹中')
-os.system('rm -rf ./cache/')
+print('欢迎使用新版成本核算')
+print('正在初始化文件夹')
+os.system('rm -rf ./cache/*')
 os.system('mkdir ./cache')
-time.sleep(2)
-#对外报价
-a = input('1进口商/2出口商:')
-print>>open('./cache/a.txt','a'),a
-if a =="2":
-    print('对外报价计算，正在跳转至相关模块')
-    time.sleep(1)
-    os.system('python dwbj对外报价.py')
-    print('保险费计算')
-    time.sleep(1)
-    os.system('python bxf保险费.py ')
-    print('出口退税计算')
-    time.sleep(1)
-    os.system('python tuisui出口退税.py')
-    print('出口检验检疫费用')
-    time.sleep(1)
-    os.system('python jianyi检疫费用.py')
-if a =='1':
-    print('进口报价计算，正在跳转至相关模块')
-    time.sleep(1)
-    
+os.system('mkdir ./cache/jk')
+os.system('mkdir ./cache/ck')
+choose = input('1进口商/2出口商:')
+if  choose == "1":
+    print('正在启动进口商计算')
+    os.system('python3 ./1进口商/j进口商计算.py')
+elif choose == "2":
+    print('正在启动出口商计算')
+    mysy = input('贸易术语1FOB/2CRF/3CIF:')
+    file6 = open('./cache/ck/mysy.txt','a+')
+    file6.write(mysy)
+    file6.close()
+    if mysy == '1':
+        pass
+    elif mysy == '2':
+        出口商定值调用.yf()
+    os.system('python3 ./2出口商/出口商计算.py')
+else:
+    print('输入错误')
+    os.system('python3 cbhs成本核算.py')
