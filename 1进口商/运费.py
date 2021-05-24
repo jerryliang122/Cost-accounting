@@ -3,11 +3,7 @@ import os
 import math
 import time
 
-yf =input('1海运/2空运:')
-#打开存储文件
-ysfs = open('./cache/jk/ysfs.txt',"a+")
-ysfs.write(yf)
-ysfs.close()
+yf = open('./cache/jk/ysfs.txt').read()
 #海运计费
 if yf == "1":
     zl = float(open('./cache/jk/zl.txt').read()) / 1000
