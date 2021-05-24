@@ -1,5 +1,6 @@
 import os
 import math
+#成交数量
 def cjsl():
     global zl
     global tj
@@ -22,6 +23,7 @@ def cjsl():
     file4.close()
     file5.close()
     return
+    #运费
 def yf():
     choose = input('1海运，2航空：')
     file = open('./cache/ck/ysfs.txt','a+')
