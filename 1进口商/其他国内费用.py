@@ -23,7 +23,7 @@ def bgf():
     file.close()
     return bgf
 def hdzf():
-    zfl = float(0.25) / 100
+    zfl = float(0.25) / 100 * float(cjj)
     zfzd = float(59.14)
     zf = max(zfl,zfzd) 
     print(str(zf))
@@ -35,6 +35,9 @@ if jyf == '1':
     jyy = jy()
 else:
     jyy = float(0)
+    file = open('./cache/jk/jyfy.txt',"a+")
+    file.write(str(jyy))
+    file.close()
 bgff = bgf()
 hdzff = hdzf()
 hj = jyy + bgff + hdzff

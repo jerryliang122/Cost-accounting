@@ -23,7 +23,12 @@ elif choose == "2":
         pass
     elif mysy == '2':
         出口商定值调用.yf()
+    else:
+        pass
+    
     os.system('python3 ./2出口商/出口商计算.py')
+
+        
 else:
     print('输入错误')
     os.system('python3 cbhs成本核算.py')
