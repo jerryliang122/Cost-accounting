@@ -19,14 +19,28 @@ elif choose == "2":
     file6 = open('./cache/ck/mysy.txt','a+')
     file6.write(mysy)
     file6.close()
+    出口商定值调用.cjsl()
+    出口商定值调用.cgcb()
     if mysy == '1':
         pass
     elif mysy == '2':
         出口商定值调用.yf()
     else:
+        出口商定值调用.yf()
         pass
-    
     os.system('python3 ./2出口商/出口商计算.py')
+    while True:
+        dj = open('./cache/ck/dj.txt').read()
+        djj = float(dj) + 0.01
+        flie = open('./cache/ck/dj.txt','w+')
+        flie.write(str(djj))
+        flie.close()
+        ykv = float(open('./cache/ck/ykv.txt').read()) / 100
+        yqykv = float(open('./cache/ck/yqykv.txt').read()) 
+        if ykv < yqykv :
+            os.system('python3 ./2出口商/出口商计算.py')
+        else:
+            break
 
         
 else:
