@@ -2,21 +2,30 @@ import os
 import math
 #成交数量
 def cjsl():
-    global zl
-    global tj
     cjsl = input('成交数量:')
+    file = open('./cache/ck/cjsl.txt','a+')
+    file.write(cjsl)
+    file.close()
+    dj = input('单价：') * 0.875 
+    file = open('./cache/ck/dj.txt','a+')
+    file.write(dj)
+    file.close()
     baozhuangsldj = input('包装数量(转换到销售数量):')
     djbaozhuangzl=input('包装单件重量:')
     djbaozhuangtj=input('包装单件体积：')
     zl = float(djbaozhuangzl)/float(baozhuangsldj) * float(cjsl)
     tj = float(djbaozhuangtj)/float(baozhuangsldj) * float(cjsl)
-    file2 =open('./cache/jk/djbaozhuangzl.txt','a+')
+    bzsl = float(cjsl) / float(baozhuangsldj)
+    file = open('./cache/ck/bzsl.txt','a+')
+    file.write(str(bzsl))
+    file.close()
+    file2 =open('./cache/ck/djbaozhuangzl.txt','a+')
     file2.write(djbaozhuangzl)
-    file3 =open('./cache/jk/djbaozhuangtj.txt','a+')
+    file3 =open('./cache/ck/djbaozhuangtj.txt','a+')
     file3.write(djbaozhuangtj)
-    file4 = open('./cache/jk/zl.txt','a+')
+    file4 = open('./cache/ck/zl.txt','a+')
     file4.write(str(zl))
-    file5 = open('./cache/jk/tj.txt','a+')
+    file5 = open('./cache/ck/tj.txt','a+')
     file5.write(str(tj))
     file2.close()
     file3.close()
@@ -30,6 +39,8 @@ def yf():
     file.write(choose)
     file.close()
     cjsl()
+    tj = open('./cache/ck/tj.txt').read()
+    zl = open('./cache/ck/zl.txt').read()
     if choose == '1':
         jzx1 = float(input('20集装箱单价：')) * 0.875
         jzx2 = float(input('40集装箱单价：')) * 0.875
@@ -100,3 +111,21 @@ def yf():
             file.write(str(yunjia))
             file.close()
     return
+def cgcb():
+    cjsl = float(input('成交数量:'))
+    gcjg = float(input('工厂价格:'))
+    ts = float(input('退税率:')) / 100
+    file=open('./cache/ck/cjsl.txt','a+')
+    file.write(cjsl)
+    file.close()
+    file=open('./cache/ck/gcjg.txt','a+')
+    file.write(gcjg)
+    file.close()
+    file=open('./cache/ck/ts.txt','a+')
+    file.write(ts)
+    file.close()
+    #检疫费用
+    jy = input('有无检疫费用：')
+    file = open('./cache/ck/ckjy.txt','a+')
+    file.write(str(jy))
+    file.close()

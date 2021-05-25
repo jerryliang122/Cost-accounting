@@ -4,7 +4,7 @@ import math
 import time
 
 mysy = open('./cache/ck/mysy.txt').read()
-htje = open('./cache/ck/cjj.txt').read()
+htje = open('./cache/ck/dwbj.txt').read()
 ysfs = open('./cache/ck/ysfs.txt').read()
 def haiyun():
     if mysy == '3':

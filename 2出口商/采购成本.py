@@ -2,10 +2,10 @@ import os
 import time
 import math
 
-cjsl = float(input('成交数量:'))
-gcjg = float(input('工厂价格:'))
+cjsl = float(open('./cache/ck/cjsl.txt').read())
+gcjg = float(open('./cache/ck/gcjg.txt').read())
 ghjg = cjsl * gcjg
-ts = float(input('退税率:')) / 100
+ts = float(open('./cache/ck/ts.txt').read())
 tssl = ghjg * ts
 file = open('./cache/ck/tssl.txt','a+')
 file.write(str(tssl))
