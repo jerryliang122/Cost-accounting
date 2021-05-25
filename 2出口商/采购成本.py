@@ -7,7 +7,7 @@ gcjg = float(open('./cache/ck/gcjg.txt').read())
 ghjg = cjsl * gcjg
 ts = float(open('./cache/ck/ts.txt').read())
 zzs = float(open('./cache/ck/zzs.txt').read())
-tssl = ghjg / (1+zzs) *ts
+tssl = ghjg / (1+zzs) * ts
 file = open('./cache/ck/tssl.txt','w+')
 file.write(str(tssl))
 file.close()

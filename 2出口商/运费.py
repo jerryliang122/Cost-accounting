@@ -38,22 +38,22 @@ if yf == "1":
     lclhc = float(open('./cache/ck/lclhc.txt').read())
     lclhm = float(open('./cache/ck/lclhm.txt').read())
     jzx20 = math.ceil(max(m20,c20))
-    jzx20a = jzx20 * jzx1
+    jzx20a = jzx20 * jzx1 * 0.875 #有汇率
     #print('\n20集装箱价格'+str(jzx20a))
     #40集装箱输出价格
     jzx40 = math.ceil(max(m40,c40))
-    jzx40a = jzx40 * jzx2
+    jzx40a = jzx40 * jzx2 * 0.875 #有汇率
     #print('\n40集装箱价格'+str(jzx40a))
     #40H集装箱输出价格
     jzx40h = math.ceil(max(m40h,c40h))
-    jzx40ha = jzx40h * jzx3
+    jzx40ha = jzx40h * jzx3 * 0.875 #有汇率
     #print('\n40h集装箱价格'+str(jzx40ha))
     #print('下面散装价格\n')
     #LCLM 公吨输出价格
     
-    lclhm1 = lclhm * zl
+    lclhm1 = lclhm * zl * 0.875 #有汇率
 
-    lclhc1 = lclhc * tj
+    lclhc1 = lclhc * tj * 0.875 #有汇率
     #print(str(lclhc1)+ ' 体积价格')
     #print(str(lclhm1)+ '重量价格')
     lcl = max(lclhc1,lclhm1)
@@ -89,6 +89,7 @@ elif yf == '2':
         #计算运费
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
+        #有汇率
         yf = round((end + fjf)*0.875,2)
         file3 = open('./cache/ck/yf.txt','w+')
         file3.write(str(yf))
@@ -97,7 +98,7 @@ elif yf == '2':
         #计算运费
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)
+        yf = round((end + fjf)*0.875,2)#有汇率
         file3 = open('./cache/ck/yf.txt','w+')
         file3.write(str(yf))
         file3.close()
@@ -105,7 +106,7 @@ elif yf == '2':
         #计算运费
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)
+        yf = round((end + fjf)*0.875,2)#有汇率
         file3 = open('./cache/ck/yf.txt','w+')
         file3.write(str(yf))
         file3.close()
@@ -113,7 +114,7 @@ elif yf == '2':
         #计算运费
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)
+        yf = round((end + fjf)*0.875,2)#有汇率
         file3 = open('./cache/ck/yf.txt','w+')
         file3.write(str(yf))
         file3.close()
@@ -121,7 +122,7 @@ elif yf == '2':
         #计算运费
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)
+        yf = round((end + fjf)*0.875,2)#有汇率
         file3 = open('./cache/ck/yf.txt','w+')
         file3.write(str(yf))
         file3.close()
@@ -129,7 +130,7 @@ elif yf == '2':
         #计算运费
         end = hkzl * float(yunjia)
         fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)
+        yf = round((end + fjf)*0.875,2)#有汇率
         file3 = open('./cache/ck/yf.txt','w+')
         file3.write(str(yf))
         file3.close()

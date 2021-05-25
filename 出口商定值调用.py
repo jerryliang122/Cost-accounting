@@ -10,7 +10,7 @@ def cjsl():
     file = open('./cache/ck/cjsl.txt','a+')
     file.write(cjsl)
     file.close()
-    dj = float(input('单价：')) * 0.875 
+    dj = float(input('单价：')) * 0.875 #有汇率
     file = open('./cache/ck/dj.txt','a+')
     file.write(str(dj))
     file.close()
@@ -45,11 +45,11 @@ def yf():
     tj = open('./cache/ck/tj.txt').read()
     zl = open('./cache/ck/zl.txt').read()
     if choose == '1':
-        jzx1 = float(input('20集装箱单价：')) * 0.875
-        jzx2 = float(input('40集装箱单价：')) * 0.875
-        jzx3 = float(input('40h集装箱单价：')) * 0.875
-        lclhc = float(input('LCL体积单价:')) * 0.875
-        lclhm =  float(input('LCL重量单价：')) * 0.875
+        jzx1 = float(input('20集装箱单价：')) * 0.875 #有汇率
+        jzx2 = float(input('40集装箱单价：')) * 0.875 #有汇率
+        jzx3 = float(input('40h集装箱单价：')) * 0.875 #有汇率
+        lclhc = float(input('LCL体积单价:')) * 0.875 #有汇率
+        lclhm =  float(input('LCL重量单价：')) * 0.875 #有汇率
         file = open('./cache/ck/jzx1.txt','a+')
         file.write(str(jzx1))
         file.close()
@@ -66,9 +66,9 @@ def yf():
         file.write(str(lclhm))
         file.close()
     else:
-        msc = float(input('最低运费msc:'))/float(100) * 0.875
+        msc = float(input('最低运费msc:'))/float(100) * 0.875 #有汇率
         awc = float(input('AWC操作费：'))
-        myc = float(input('MYC燃油费:')) /float(100) * 0.875
+        myc = float(input('MYC燃油费:')) /float(100) * 0.875 #有汇率
         file = open('./cache/ck/myc.txt','a+')
         file.write(str(myc))
         file.close()
