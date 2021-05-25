@@ -19,3 +19,12 @@ def yf():
     return hj
 #运费保险费合集
 yfbxf = yf()
+zcb = float(gnfyhj) + float(cgcbhj) + yfbxf
+yke = float(dwbj) - float(zcb)
+ykv = yke / zcb * 100
+file = open('./cache/ck/ykv.txt','w+')
+file.write(str(ykv))
+file.close()
+file = open('./cache/ck/yke.txt','w+')
+file.write(str(yke))
+file.close()
