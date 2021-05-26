@@ -59,10 +59,17 @@ if yf == "1":
         print(str(jzx) + '集装箱价格' )
         file1 = open('./cache/jk/yf.txt','a+')
         file1.write(str(jzx))
+        file = open('./cache/jk/ysfs.txt','w+')
+        file.write('集装箱')
+        file.close()
     else:
         print(str(lcl) + '散件价格')     
         file1 = open('./cache/jk/yf.txt','a+')
         file1.write(str(lcl))
+        file1.close
+        file = open('./cache/jk/ysfs.txt','w+')
+        file.write('散货')
+        file.close()
 #航空计费
 elif yf == '2':
     zl = float(open('./cache/jk/zl.txt').read()) 

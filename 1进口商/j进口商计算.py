@@ -55,7 +55,7 @@ if mysy == '1':
     #包装数量
     bzsl = float(baozhuangsldj) / float(cjsl)
     print('包装数量'+ str(bzsl))
-    print('运费:'+ open('./cache/jk/yf.txt').read())
+    print('运费:'+ open('./cache/jk/yf.txt').read()+open('./cache/jk/ysfs.txt').read())
     print('保险金额:'+ open('./cache/jk/bxje.txt').read())
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == "2":
