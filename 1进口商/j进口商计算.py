@@ -53,8 +53,10 @@ if mysy == '1':
     print('计算完毕 ')
     time.sleep(1)
     #包装数量
-    bzsl = float(baozhuangsldj) / float(cjsl)
+    bzsl = float(cjsl) / float(baozhuangsldj)
     print('包装数量'+ str(bzsl))
+    print('重量:'+ open('./cache/jk/zl.txt').read())
+    print('体积:'+ open('./cache/jk/tj.txt').read())
     print('运费:'+ open('./cache/jk/yf.txt').read()+open('./cache/jk/ysfs.txt').read())
     print('保险金额:'+ open('./cache/jk/bxje.txt').read())
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
