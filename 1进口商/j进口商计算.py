@@ -62,7 +62,8 @@ if mysy == '1':
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == "2":
     file = open('./cache/jk/yf.txt','a+')
-    file.write('0')
+    a = '0'
+    file.write(a)
     file.close()
     print('计算保险费')
     os.system('python3 ./1进口商/保险费.py')
@@ -80,7 +81,8 @@ elif mysy == "2":
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == '3':
     file = open('./cache/jk/yf.txt','a+')
-    file.write('0')
+    a = '0'
+    file.write(a)
     file.close()
     file = open('./cache/jk/bxf.txt','a+')
     file.write('0')
