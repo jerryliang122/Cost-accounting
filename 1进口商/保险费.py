@@ -15,8 +15,9 @@ def haiyun():
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
+        bxje = htjg * 1.1
         file1 =open('./cache/jk/bxje.txt','a+')
-        file1.write(str(htjg * 1.1 ))
+        file1.write(str(bxje))
         file1.close()
         pass
     elif mysy =="2":
@@ -25,8 +26,9 @@ def haiyun():
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
+        bxje = float(htje) * 1.1
         file1 =open('./cache/jk/bxje.txt','a+')
-        file1.write(str(float(htje) * 1.1))
+        file1.write(str(bxje))
         file1.close()
         pass
     else:
