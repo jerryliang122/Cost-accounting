@@ -16,9 +16,9 @@ def haiyun():
         file1.write(str(bxf))
         file1.close()
         bxje = htjg * 1.1
-        file1 =open('./cache/jk/bxje.txt','a+')
-        file1.write(str(bxje))
-        file1.close()
+        file =open('./cache/jk/bxje.txt','a+')
+        file.write(str(bxje))
+        file.close()
         pass
     elif mysy =="2":
         bxf = float(htje) * 0.00977
@@ -27,9 +27,9 @@ def haiyun():
         file1.write(str(bxf))
         file1.close()
         bxje = float(htje) * 1.1
-        file1 =open('./cache/jk/bxje.txt','a+')
-        file1.write(str(bxje))
-        file1.close()
+        file =open('./cache/jk/bxje.txt','a+')
+        file.write(str(bxje))
+        file.close()
         pass
     else:
         bxje=float(htje) * 1.1
@@ -38,9 +38,9 @@ def haiyun():
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
-        file1 =open('./cache/jk/bxje.txt','a+')
-        file1.write(str(bxje))
-        file1.close()
+        file =open('./cache/jk/bxje.txt','a+')
+        file.write(str(bxje))
+        file.close()
 
 def kongyun():
     if mysy == '1':
@@ -51,9 +51,9 @@ def kongyun():
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
-        file1 =open('./cache/jk/htjg.txt','a+')
-        file1.write(str(htjg))
-        file1.close()
+        file =open('./cache/jk/htjg.txt','a+')
+        file.write(str(htjg))
+        file.close()
         pass
     elif mysy =="2":
         bxf = float(htje) * 0.0047
@@ -61,17 +61,17 @@ def kongyun():
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
-        file1 =open('./cache/jk/htjg.txt','a+')
-        file1.write(str(htje))
-        file1.close()
+        file =open('./cache/jk/htjg.txt','a+')
+        file.write(str(htje))
+        file.close()
         pass
     else:
         bxje=float(htje) * 1.1
         bxf = float(0.0088) * bxje
         print(str(bxf))
-        file1 =open('./cache/jk/bxf.txt','a+')
-        file1.write(str(bxf))
-        file1.close()
+        file =open('./cache/jk/bxf.txt','a+')
+        file.write(str(bxf))
+        file.close()
 if ysfs == "1":
     haiyun()
 else:
