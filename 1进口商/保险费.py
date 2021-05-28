@@ -17,6 +17,7 @@ def haiyun():
         file1.close()
         bxje = htjg * 1.1
         file =open('./cache/jk/bxje.txt','a+')
+        print(str(bxje))
         file.write(str(bxje))
         file.close()
         pass
