@@ -36,7 +36,6 @@ if mysy == '1':
     file4.close()
     file5.close()
     print('计算运费')
-    time.sleep(2)
     os.system('python3 ./1进口商/运费.py')
     print('计算保险费')
     os.system('python3 ./1进口商/保险费.py')

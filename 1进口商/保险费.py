@@ -20,7 +20,6 @@ def haiyun():
         print(str(bxje))
         file.write(str(bxje))
         file.close()
-        pass
     elif mysy =="2":
         bxf = float(htje) * 0.00977
         print(str(bxf))
@@ -31,7 +30,6 @@ def haiyun():
         file =open('./cache/jk/bxje.txt','a+')
         file.write(str(bxje))
         file.close()
-        pass
     else:
         bxje=float(htje) * 1.1
         bxf = float(0.0088) * bxje
