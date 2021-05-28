@@ -50,7 +50,7 @@ def kongyun():
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
-        file =open('./cache/jk/htjg.txt','a+')
+        file =open('./cache/jk/bxje.txt','a+')
         file.write(str(htjg))
         file.close()
         pass
@@ -60,7 +60,7 @@ def kongyun():
         file1 =open('./cache/jk/bxf.txt','a+')
         file1.write(str(bxf))
         file1.close()
-        file =open('./cache/jk/htjg.txt','a+')
+        file =open('./cache/jk/bxje.txt','a+')
         file.write(str(htje))
         file.close()
         pass
@@ -68,10 +68,12 @@ def kongyun():
         bxje=float(htje) * 1.1
         bxf = float(0.0088) * bxje
         print(str(bxf))
-        file =open('./cache/jk/bxf.txt','a+')
+        file =open('./cache/jk/bxje.txt','a+')
         file.write(str(bxf))
         file.close()
-if ysfs == "1":
+if ysfs == "集装箱":
+    haiyun()
+elif ysfs == '散货':
     haiyun()
 else:
     kongyun()
