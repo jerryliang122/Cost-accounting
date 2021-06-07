@@ -56,5 +56,6 @@ else:
     print('总体积'+ open('./cache/ck/tj.txt').read())
     print('运费:'+ open('./cache/ck/yf.txt').read()+open('./cache/ck/hy-ysfs.txt').read())
     print('投保金额'+ open('./cache/ck/bxje.txt').read())
+    print('保险费'+ open('./cache/ck/bxf.txt').read())
 print("预期盈亏率"+open('./cache/ck/ykv.txt').read())
 print('预期盈亏额'+ open('./cache/ck/yke.txt').read())
