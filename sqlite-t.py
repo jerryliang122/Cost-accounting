@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from sqlite3.dbapi2 import Date
+
 #sqlit检查目录下是否有文件
 sql = os.path.exists('sql.db')
 if not sql:
