@@ -3,8 +3,40 @@ import os
 import time
 import 出口商定值调用
 import os
+import sqlite3
+from sqlitet import setdata 
+from sqlitet import readdata
+from sqlitet import updatedata
+from sqlitet import deldata
 print('欢迎使用新版成本核算')
-print('正在初始化文件夹')
+print('正在初始化数据库')
+#sqlit检查目录下是否有文件
+sql = os.path.exists('sql.db')
+if not sql:
+    conn = sqlite3.connect('sql.db')
+    c = conn.cursor()
+    c.execute('CREATE TABLE fixed ( name TEXT NULL , value TEXT NULL );')
+    c.execute('CREATE TABLE calculated ( name TEXT NULL , Value TEXT NULL );')
+    conn.commit()
+    hl = float(input('汇率:')) 
+    setdata('fixed','汇率',str(hl))
+    conn.commit()
+else:
+    database = input('您不是第一次使用本程序，是否初始化[y/n]:')
+    if database =='y':
+        os.remove('sql.db')
+        conn = sqlite3.connect('sql.db')
+        c = conn.cursor()
+        c.execute('CREATE TABLE fixed ( name TEXT NULL , value TEXT NULL );')
+        c.execute('CREATE TABLE calculated ( name TEXT NULL , Value TEXT NULL );')
+        hl = float(input('汇率:')) 
+        setdata('fixed','汇率',str(hl))
+        conn.commit()
+    else:
+        conn = sqlite3.connect('sql.db')
+        c = conn.cursor()
+        c.execute('drop table calculated')
+conn.close()
 choose = input('1进口商/2出口商:')
 if  choose == "1":
     print('正在启动进口商计算')
@@ -12,9 +44,7 @@ if  choose == "1":
 elif choose == "2":
     print('正在启动出口商计算')
     mysy = input('贸易术语1FOB/2CRF/3CIF:')
-    file6 = open('./cache/ck/mysy.txt','a+')
-    file6.write(mysy)
-    file6.close()
+    setdata("fixed",'贸易术语',str(mysy))
     出口商定值调用.cjsl()
     出口商定值调用.cgcb()
     if mysy == '1':
