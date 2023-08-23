@@ -5,17 +5,13 @@ import time
 
 mysy = input('贸易术语1FOB/2CRF/3CIF:')
 cjj =float(input('成交价:')) * 0.879
-file7 = open('./cache/jk/cjj.txt','a+')
-file7.write(str(cjj))
-file7.close()
-file6 = open('./cache/jk/mysy.txt','a+')
-file6.write(mysy)
-file6.close()
+with open('./cache/jk/cjj.txt','a+') as file7:
+    file7.write(str(cjj))
+with open('./cache/jk/mysy.txt','a+') as file6:
+    file6.write(mysy)
 yf =input('1海运/2空运:')
-#打开存储文件
-ysfs = open('./cache/jk/ysfs.txt',"a+")
-ysfs.write(yf)
-ysfs.close()
+with open('./cache/jk/ysfs.txt',"a+") as ysfs:
+    ysfs.write(yf)
 if mysy == '1':
     cjsl = input('成交数量:')
     baozhuangsldj = input('包装数量(转换到销售数量):')
@@ -23,15 +19,14 @@ if mysy == '1':
     djbaozhuangtj=input('包装单件体积：')
     zl = float(djbaozhuangzl)/float(baozhuangsldj) * float(cjsl)
     tj = float(djbaozhuangtj)/float(baozhuangsldj) * float(cjsl)
-    file2 =open('./cache/jk/djbaozhuangzl.txt','a+')
-    file2.write(djbaozhuangzl)
-    file3 =open('./cache/jk/djbaozhuangtj.txt','a+')
-    file3.write(djbaozhuangtj)
-    file4 = open('./cache/jk/zl.txt','a+')
-    file4.write(str(zl))
-    file5 = open('./cache/jk/tj.txt','a+')
-    file5.write(str(tj))
-    file2.close()
+    with open('./cache/jk/djbaozhuangzl.txt','a+') as file2:
+        file2.write(djbaozhuangzl)
+        file3 =open('./cache/jk/djbaozhuangtj.txt','a+')
+        file3.write(djbaozhuangtj)
+        file4 = open('./cache/jk/zl.txt','a+')
+        file4.write(str(zl))
+        file5 = open('./cache/jk/tj.txt','a+')
+        file5.write(str(tj))
     file3.close()
     file4.close()
     file5.close()
@@ -53,17 +48,16 @@ if mysy == '1':
     time.sleep(1)
     #包装数量
     bzsl = float(cjsl) / float(baozhuangsldj)
-    print('包装数量'+ str(bzsl))
+    print(f'包装数量{str(bzsl)}')
     print('重量:'+ open('./cache/jk/zl.txt').read())
     print('体积:'+ open('./cache/jk/tj.txt').read())
     print('运费:'+ open('./cache/jk/yf.txt').read()+open('./cache/jk/ysfs.txt').read())
     print('保险金额:'+ open('./cache/jk/bxje.txt').read())
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == "2":
-    file = open('./cache/jk/yf.txt','a+')
-    a = '0'
-    file.write(a)
-    file.close()
+    with open('./cache/jk/yf.txt','a+') as file:
+        a = '0'
+        file.write(a)
     print('计算保险费')
     os.system('python3 ./1进口商/保险费.py')
     print('计算进口税费')
@@ -79,10 +73,9 @@ elif mysy == "2":
     print('保险金额:'+ open('./cache/jk/bxje.txt').read())
     print('保险费:'+ open('./cache/jk/bxf.txt').read())
 elif mysy == '3':
-    file = open('./cache/jk/yf.txt','a+')
-    a = '0'
-    file.write(a)
-    file.close()
+    with open('./cache/jk/yf.txt','a+') as file:
+        a = '0'
+        file.write(a)
     file = open('./cache/jk/bxf.txt','a+')
     file.write('0')
     print('计算进口税费')

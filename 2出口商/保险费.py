@@ -9,67 +9,45 @@ ysfs = open('./cache/ck/ysfs.txt').read()
 def haiyun():
     if mysy == '3':
         bxje=float(htje) * 1.1
-        bxf = float(0.0088) * bxje
-        print(str(bxf))
-        file1 =open('./cache/ck/bxf.txt','w+')
-        file1.write(str(bxf))
-        file1.close()
-        file1 =open('./cache/ck/bxje.txt','w+')
-        file1.write(str(bxje))
-        file1.close()
-        pass
-    elif mysy =="2":
+        bxf = 0.0088 * bxje
+        print(bxf)
+        with open('./cache/ck/bxf.txt','w+') as file1:
+            file1.write(str(bxf))
+        with open('./cache/ck/bxje.txt','w+') as file1:
+            file1.write(str(bxje))
+    elif mysy == "2":
         bxf = float(htje) * 0.00977
-        print(str(bxf))
-        file1 =open('./cache/ck/bxf.txt','w+')
-        file1.write(str(bxf))
-        file1.close()
+        print(bxf)
+        with open('./cache/ck/bxf.txt','w+') as file1:
+            file1.write(str(bxf))
         bxje = float(htje) * 1.1
-        file1 =open('./cache/ck/bxje.txt','w+')
-        file1.write(str(bxje))
-        file1.close()
-        pass
+        with open('./cache/ck/bxje.txt','w+') as file1:
+            file1.write(str(bxje))
     else:
-        file1 =open('./cache/ck/bxf.txt','w+')
-        file1.write(str(0))
-        file1.close()
-        file1 =open('./cache/ck/bxje.txt','w+')
-        file1.write(str(0))
-        file1.close()
-        pass
+        with open('./cache/ck/bxf.txt','w+') as file1:
+            file1.write(str(0))
+        with open('./cache/ck/bxje.txt','w+') as file1:
+            file1.write(str(0))
 
 def kongyun():
     if mysy == '3':
         bxje=float(htje) * 1.1
-        bxf = float(0.0088) * bxje
-        print(str(bxf))
-        file1 =open('./cache/ck/bxf.txt','w+')
-        file1.write(str(bxf))
-        file1.close()
-        file1 =open('./cache/ck/bxje.txt','w+')
-        file1.write(str(bxje))
-        file1.close()
-        pass
-    elif mysy =="2":
+        bxf = 0.0088 * bxje
+        print(bxf)
+        with open('./cache/ck/bxf.txt','w+') as file1:
+            file1.write(str(bxf))
+    elif mysy == "2":
         bxf = float(htje) * 0.0047
-        print(str(bxf))
-        file1 =open('./cache/ck/bxf.txt','w+')
-        file1.write(str(bxf))
-        file1.close()
+        print(bxf)
+        with open('./cache/ck/bxf.txt','w+') as file1:
+            file1.write(str(bxf))
         bxje = float(htje) * 1.1
-        file1 =open('./cache/ck/bxje.txt','w+')
-        file1.write(str(bxje))
-        file1.close()
-        pass
     else:
-        file1 =open('./cache/ck/bxf.txt','w+')
-        file1.write(str(0))
-        file1.close()
+        with open('./cache/ck/bxf.txt','w+') as file1:
+            file1.write(str(0))
         bxje = float(0) * 1.1
-        file1 =open('./cache/ck/bxje.txt','w+')
+    with open('./cache/ck/bxje.txt','w+') as file1:
         file1.write(str(bxje))
-        file1.close()
-        pass
 if ysfs == "1":
     haiyun()
 else:

@@ -50,7 +50,7 @@ if yf == "1":
     #print('\n40h集装箱价格'+str(jzx40ha))
     #print('下面散装价格\n')
     #LCLM 公吨输出价格
-    
+
     lclhm1 = lclhm * zl * 0.875 #有汇率
 
     lclhc1 = lclhc * tj * 0.875 #有汇率
@@ -59,81 +59,34 @@ if yf == "1":
     lcl = max(lclhc1,lclhm1)
     #print(str(lcl) + '散件价格' )
     jzx = min(jzx40ha,jzx20a,jzx40a)
-    #print(str(jzx) + '集装箱价格' )    
-    if lcl > jzx :
-        #print(str(jzx) + '集装箱价格' )
-        file1 = open('./cache/ck/yf.txt','w+')
-        file1.write(str(jzx))
-        file1.close()
+    #print(str(jzx) + '集装箱价格' )
+    if lcl > jzx:
+        with open('./cache/ck/yf.txt','w+') as file1:
+            file1.write(str(jzx))
         file = open('./cache/ck/hy-ysfs.txt','w+')
-        file.write(str('集装箱'))
-        file.close()
+        file.write('集装箱')
     else:
         #print(str(lcl) + '散件价格')     
         file1 = open('./cache/ck/yf.txt','w+')
         file1.write(str(lcl))
         file = open('./cache/ck/hy-ysfs.txt','w+')
-        file.write(str('散货'))
-        file.close()
-#航空计费
-elif yf == '2':
-    file = open('./cache/ck/hy-ysfs.txt','w+')
-    file.write(str(''))
+        file.write('散货')
     file.close()
+elif yf == '2':
+    with open('./cache/ck/hy-ysfs.txt','w+') as file:
+        file.write('')
     yunjia = float(open('./cache/ck/yunjia.txt').read())
     hkzl = float(open('./cache/ck/htzl.txt').read())
     awc = float(open('./cache/ck/awc.txt').read())
     msc = float(open('./cache/ck/msc.txt').read())
     myc = float(open('./cache/ck/myc.txt').read())
-    if hkzl < float('45'):
         #计算运费
-        end = hkzl * float(yunjia)
-        fjf = awc + hkzl * myc + msc * hkzl
-        #有汇率
-        yf = round((end + fjf)*0.875,2)
-        file3 = open('./cache/ck/yf.txt','w+')
+    end = hkzl * yunjia
+    fjf = awc + hkzl * myc + msc * hkzl
+    #有汇率
+    yf = round((end + fjf)*0.875,2)
+    with open('./cache/ck/yf.txt','w+') as file3:
         file3.write(str(yf))
-        file3.close()
-    elif hkzl >= float('45') and hkzl < float('100'):
-        #计算运费
-        end = hkzl * float(yunjia)
-        fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)#有汇率
-        file3 = open('./cache/ck/yf.txt','w+')
-        file3.write(str(yf))
-        file3.close()
-    elif hkzl >= float('100') and hkzl < float('300'):
-        #计算运费
-        end = hkzl * float(yunjia)
-        fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)#有汇率
-        file3 = open('./cache/ck/yf.txt','w+')
-        file3.write(str(yf))
-        file3.close()
-    elif hkzl >= float('300') and hkzl < float('500'):
-        #计算运费
-        end = hkzl * float(yunjia)
-        fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)#有汇率
-        file3 = open('./cache/ck/yf.txt','w+')
-        file3.write(str(yf))
-        file3.close()
-    elif hkzl >= float('500') and hkzl < float('1000'):
-        #计算运费
-        end = hkzl * float(yunjia)
-        fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)#有汇率
-        file3 = open('./cache/ck/yf.txt','w+')
-        file3.write(str(yf))
-        file3.close()
-    else:
-        #计算运费
-        end = hkzl * float(yunjia)
-        fjf = awc + hkzl * myc + msc * hkzl
-        yf = round((end + fjf)*0.875,2)#有汇率
-        file3 = open('./cache/ck/yf.txt','w+')
-        file3.write(str(yf))
-        file3.close()
 else:
     #print('输入错误')
     os.system('python3 ./出口商/运费.py')

@@ -20,9 +20,7 @@ zcb = cif + qtgnfyhj + yhfyhj + jksfhj + yfhj + bxfhj
 xhsl = float(open('./cache/jk/xhsl.txt').read())
 yqyke = xhsl - zcb
 ykl = yqyke / zcb * 100
-file = open('./cache/jk/yqyke.txt','a+')
-file.write(str(yqyke))
-file.close()
-file1 = open('./cache/jk/ykl.txt',"a+")
-file1.write(str(ykl))
-file1.close()
+with open('./cache/jk/yqyke.txt','a+') as file:
+    file.write(str(yqyke))
+with open('./cache/jk/ykl.txt',"a+") as file1:
+    file1.write(str(ykl))
